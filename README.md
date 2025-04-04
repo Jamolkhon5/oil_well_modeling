@@ -29,7 +29,7 @@
 
 1. Клонируйте репозиторий:
    ```
-   git clone https://github.com/your-username/oil-well-model.git
+   git clone https://github.com/Jamolkhon5/oil-well-model.git
    cd oil-well-model
    ```
 
