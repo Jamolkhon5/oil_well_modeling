@@ -1,0 +1,468 @@
+2025-04-07 09:52:00,522 - __main__ - INFO - Запуск расчетной схемы Пушкиной Т.В.
+2025-04-07 09:52:00,523 - src.data_loader - INFO - Начинаем загрузку всех файлов данных
+2025-04-07 09:52:00,523 - src.data_loader - INFO - Загрузка файла pzab_quarterly.csv
+2025-04-07 09:52:00,549 - src.data_loader - INFO - Файл pzab_quarterly.csv успешно загружен с кодировкой cp1251
+2025-04-07 09:52:00,549 - src.data_loader - INFO - Размер данных: (40, 113)
+2025-04-07 09:52:00,549 - src.data_loader - INFO - Загрузка файла ppl_quarterly.xlsx
+2025-04-07 09:52:00,929 - src.data_loader - INFO - Файл ppl_quarterly.xlsx успешно загружен
+2025-04-07 09:52:00,929 - src.data_loader - INFO - Размер данных: (98, 27)
+2025-04-07 09:52:00,933 - src.data_loader - INFO - Загрузка файла arcgis_fund.csv
+2025-04-07 09:52:00,944 - src.data_loader - ERROR - Ошибка при загрузке файла arcgis_fund.csv: 'utf-8' codec can't decode byte 0xd0 in position 2: unexpected end of data
+2025-04-07 09:52:00,944 - src.data_loader - ERROR - Повторная ошибка при загрузке файла arcgis_fund.csv: The 'low_memory' option is not supported with the 'python' engine
+2025-04-07 09:52:00,944 - src.data_loader - INFO - Загрузка файла gdi_vnr.xlsx
+2025-04-07 09:52:00,955 - src.data_loader - INFO - Файл gdi_vnr.xlsx успешно загружен
+2025-04-07 09:52:00,956 - src.data_loader - INFO - Размер данных: (3, 24)
+2025-04-07 09:52:00,958 - src.data_loader - INFO - Загрузка файла gdi_reinterpretation.xlsx
+2025-04-07 09:52:00,973 - src.data_loader - INFO - Файл gdi_reinterpretation.xlsx успешно загружен
+2025-04-07 09:52:00,973 - src.data_loader - INFO - Размер данных: (14, 22)
+2025-04-07 09:52:00,979 - src.data_loader - INFO - Файл gdi_reinterpretation.xlsx содержит несколько листов: ['Лист1', 'Лист2', 'Лист3']
+2025-04-07 09:52:01,001 - src.data_loader - INFO - Все листы загружены в словарь
+2025-04-07 09:52:01,001 - src.data_loader - INFO - Загрузка файла gtp.xlsx
+2025-04-07 09:52:01,044 - src.data_loader - INFO - Файл gtp.xlsx успешно загружен
+2025-04-07 09:52:01,044 - src.data_loader - INFO - Размер данных: (15, 52)
+2025-04-07 09:52:01,047 - src.data_loader - INFO - Загрузка файла nnt_NGT.xlsx
+2025-04-07 09:52:01,080 - src.data_loader - INFO - Файл nnt_NGT.xlsx успешно загружен
+2025-04-07 09:52:01,080 - src.data_loader - INFO - Размер данных: (90, 5)
+2025-04-07 09:52:01,083 - src.data_loader - INFO - Все файлы данных успешно загружены
+2025-04-07 09:52:01,083 - __main__ - INFO - Примеры загруженных данных:
+2025-04-07 09:52:01,084 - __main__ - INFO - Датасет pzab:
+2025-04-07 09:52:01,154 - __main__ - INFO - 
+   NSKV    UWI   LAYER  ... PUMP_DEPTH_ABS_08  PUMP_DEPTH_ABS_09  PUMP_DEPTH_ABS_10
+0     3  084_3  БС12/1  ...           2504.03            2504.03            2504.03
+1     5  084_5  БС12/1  ...               NaN                NaN                NaN
+
+[2 rows x 113 columns]
+2025-04-07 09:52:01,154 - __main__ - INFO - Датасет ppl:
+2025-04-07 09:52:01,165 - __main__ - INFO - 
+   NSKV  PPL2204  PPL2207  ...  20_Kpronoi  15_PoprYsm  0_849_PZB
+0     1     91.0     83.0  ...         0.0         0.9         21
+1  1_T3     91.0     83.0  ...         0.0         0.0          0
+
+[2 rows x 27 columns]
+2025-04-07 09:52:01,165 - src.data_loader - WARNING - Датасет 'arcgis' не загружен
+2025-04-07 09:52:01,165 - __main__ - INFO - Датасет gdi_vnr:
+2025-04-07 09:52:01,177 - __main__ - INFO - 
+   Скважина  ...    Рпл внк  \n(при 0 Нст),глуш
+0  084_26G2  ...                          271.7
+1   084_34G  ...                          272.3
+
+[2 rows x 24 columns]
+2025-04-07 09:52:01,177 - __main__ - INFO - Датасет gdi_reint, лист Лист1:
+2025-04-07 09:52:01,185 - __main__ - INFO - 
+  Unnamed: 0 Unnamed: 1 Unnamed: 2  ... Unnamed: 19 Unnamed: 20 Unnamed: 21
+0        NaN        NaN        NaN  ...         NaN         NaN         NaN
+1        NaN        NaN        NaN  ...         NaN         NaN         NaN
+
+[2 rows x 22 columns]
+2025-04-07 09:52:01,185 - __main__ - INFO - Датасет gdi_reint, лист Лист2:
+2025-04-07 09:52:01,185 - __main__ - INFO - 
+Empty DataFrame
+Columns: []
+Index: []
+2025-04-07 09:52:01,185 - __main__ - INFO - Датасет gdi_reint, лист Лист3:
+2025-04-07 09:52:01,185 - __main__ - INFO - 
+Empty DataFrame
+Columns: []
+Index: []
+2025-04-07 09:52:01,186 - __main__ - INFO - Датасет gtp:
+2025-04-07 09:52:01,200 - __main__ - INFO - 
+  Unnamed: 0                            Unnamed: 1  ... Unnamed: 50 Unnamed: 51
+0        NaN                                   NaN  ...         NaN         NaN
+1        NaN  Геолого - Технологические параметры   ...         NaN         NaN
+
+[2 rows x 52 columns]
+2025-04-07 09:52:01,201 - __main__ - INFO - Датасет nnt_ngt:
+2025-04-07 09:52:01,204 - __main__ - INFO - 
+    Сетка:   ... пк1-3_gnt_07.2023.grd
+0  Скважина  ...                   NaN
+1       65P  ...                   NaN
+
+[2 rows x 5 columns]
+2025-04-07 09:52:01,204 - __main__ - INFO - 
+=== Этап 1: Подбор относительных фазовых проницаемостей ===
+2025-04-07 09:52:01,204 - src.data_loader - INFO - Подготовка данных для модуля 1 (относительные фазовые проницаемости)
+2025-04-07 09:52:01,204 - src.data_loader - INFO - Данные для модуля 1 успешно подготовлены
+2025-04-07 09:52:01,206 - src.modules.phase_permeability - INFO - Модель инициализирована данными
+2025-04-07 09:52:01,206 - src.modules.phase_permeability - INFO - Начинаем подбор параметров модели...
+2025-04-07 09:52:01,218 - src.modules.phase_permeability - INFO - Параметры модели успешно подобраны
+2025-04-07 09:52:01,219 - src.modules.phase_permeability - INFO - Оптимальные параметры: {'Swo': np.float64(0.42), 'Swk': np.float64(0.677), 'krwk': np.float64(0.135), 'krok': np.float64(1.0), 'nw': np.float64(1.0), 'no': np.float64(0.1)}
+2025-04-07 09:52:01,503 - src.utils - INFO - График сохранен в C:\Users\User\Desktop\Nisty\oil_well_modeling\output\phase_permeability_curves.png
+2025-04-07 09:52:01,503 - __main__ - INFO - Результаты подбора относительных фазовых проницаемостей:
+2025-04-07 09:52:01,503 - __main__ - INFO - Модель успешно оптимизирована.
+
+Параметры относительных фазовых проницаемостей:
+- Остаточная водонасыщенность (Swo): 0.4200
+- Водонасыщенность при остаточной нефтенасыщенности (Swk): 0.6770
+- Конечное значение относительной водопронецаемости (krwk): 0.1350
+- Конечное значение относительной нефтепронецаемости (krok): 1.0000
+- Показатель степени для воды (nw): 1.0000
+- Показатель степени для нефти (no): 0.1000
+
+2025-04-07 09:52:01,503 - __main__ - INFO - 
+=== Этап 2: Подбор итеративной регрессионной моделью ===
+2025-04-07 09:52:01,503 - src.data_loader - INFO - Подготовка данных для модуля 2 (итеративная регрессионная модель)
+2025-04-07 09:52:01,503 - src.data_loader - INFO - Данные для модуля 2 успешно подготовлены
+2025-04-07 09:52:01,503 - src.modules.regression_model - INFO - Модель инициализирована данными
+2025-04-07 09:52:01,503 - src.modules.regression_model - INFO - Начинаем итеративный подбор параметров...
+2025-04-07 09:52:01,516 - src.modules.regression_model - INFO - Итерация 1: RMSE = 0.701031
+2025-04-07 09:52:01,521 - src.modules.regression_model - INFO - Итерация 3: RMSE = 0.683969
+2025-04-07 09:52:01,524 - src.modules.regression_model - WARNING - Итерация 4: Оптимизация не сошлась
+2025-04-07 09:52:01,527 - src.modules.regression_model - WARNING - Итерация 5: Оптимизация не сошлась
+2025-04-07 09:52:01,530 - src.modules.regression_model - INFO - Итерация 6: RMSE = 0.444506
+2025-04-07 09:52:01,533 - src.modules.regression_model - INFO - Итерация 7: RMSE = 0.423101
+2025-04-07 09:52:01,538 - src.modules.regression_model - WARNING - Итерация 8: Оптимизация не сошлась
+2025-04-07 09:52:01,541 - src.modules.regression_model - WARNING - Итерация 9: Оптимизация не сошлась
+2025-04-07 09:52:01,547 - src.modules.regression_model - WARNING - Итерация 11: Оптимизация не сошлась
+2025-04-07 09:52:01,580 - src.modules.regression_model - WARNING - Итерация 21: Оптимизация не сошлась
+2025-04-07 09:52:01,593 - src.modules.regression_model - WARNING - Итерация 25: Оптимизация не сошлась
+2025-04-07 09:52:01,596 - src.modules.regression_model - WARNING - Итерация 26: Оптимизация не сошлась
+2025-04-07 09:52:01,602 - src.modules.regression_model - WARNING - Итерация 28: Оптимизация не сошлась
+2025-04-07 09:52:01,615 - src.modules.regression_model - WARNING - Итерация 32: Оптимизация не сошлась
+2025-04-07 09:52:01,619 - src.modules.regression_model - INFO - Итерация 33: RMSE = 0.347562
+2025-04-07 09:52:01,622 - src.modules.regression_model - WARNING - Итерация 34: Оптимизация не сошлась
+2025-04-07 09:52:01,644 - src.modules.regression_model - WARNING - Итерация 41: Оптимизация не сошлась
+2025-04-07 09:52:01,650 - src.modules.regression_model - WARNING - Итерация 42: Оптимизация не сошлась
+2025-04-07 09:52:01,698 - src.modules.regression_model - WARNING - Итерация 55: Оптимизация не сошлась
+2025-04-07 09:52:01,732 - src.modules.regression_model - WARNING - Итерация 66: Оптимизация не сошлась
+2025-04-07 09:52:01,748 - src.modules.regression_model - WARNING - Итерация 71: Оптимизация не сошлась
+2025-04-07 09:52:01,751 - src.modules.regression_model - WARNING - Итерация 72: Оптимизация не сошлась
+2025-04-07 09:52:01,798 - src.modules.regression_model - WARNING - Итерация 85: Оптимизация не сошлась
+2025-04-07 09:52:01,819 - src.modules.regression_model - WARNING - Итерация 92: Оптимизация не сошлась
+2025-04-07 09:52:01,859 - src.modules.regression_model - WARNING - Итерация 105: Оптимизация не сошлась
+2025-04-07 09:52:01,872 - src.modules.regression_model - WARNING - Итерация 109: Оптимизация не сошлась
+2025-04-07 09:52:01,877 - src.modules.regression_model - WARNING - Итерация 110: Оптимизация не сошлась
+2025-04-07 09:52:01,891 - src.modules.regression_model - WARNING - Итерация 114: Оптимизация не сошлась
+2025-04-07 09:52:01,894 - src.modules.regression_model - WARNING - Итерация 115: Оптимизация не сошлась
+2025-04-07 09:52:01,897 - src.modules.regression_model - WARNING - Итерация 116: Оптимизация не сошлась
+2025-04-07 09:52:01,906 - src.modules.regression_model - WARNING - Итерация 119: Оптимизация не сошлась
+2025-04-07 09:52:01,915 - src.modules.regression_model - WARNING - Итерация 122: Оптимизация не сошлась
+2025-04-07 09:52:01,923 - src.modules.regression_model - WARNING - Итерация 124: Оптимизация не сошлась
+2025-04-07 09:52:01,971 - src.modules.regression_model - WARNING - Итерация 138: Оптимизация не сошлась
+2025-04-07 09:52:01,988 - src.modules.regression_model - WARNING - Итерация 143: Оптимизация не сошлась
+2025-04-07 09:52:01,997 - src.modules.regression_model - WARNING - Итерация 145: Оптимизация не сошлась
+2025-04-07 09:52:02,000 - src.modules.regression_model - WARNING - Итерация 146: Оптимизация не сошлась
+2025-04-07 09:52:02,028 - src.modules.regression_model - WARNING - Итерация 154: Оптимизация не сошлась
+2025-04-07 09:52:02,060 - src.modules.regression_model - WARNING - Итерация 163: Оптимизация не сошлась
+2025-04-07 09:52:02,063 - src.modules.regression_model - WARNING - Итерация 164: Оптимизация не сошлась
+2025-04-07 09:52:02,071 - src.modules.regression_model - WARNING - Итерация 167: Оптимизация не сошлась
+2025-04-07 09:52:02,074 - src.modules.regression_model - WARNING - Итерация 168: Оптимизация не сошлась
+2025-04-07 09:52:02,080 - src.modules.regression_model - WARNING - Итерация 170: Оптимизация не сошлась
+2025-04-07 09:52:02,101 - src.modules.regression_model - WARNING - Итерация 176: Оптимизация не сошлась
+2025-04-07 09:52:02,104 - src.modules.regression_model - WARNING - Итерация 177: Оптимизация не сошлась
+2025-04-07 09:52:02,126 - src.modules.regression_model - WARNING - Итерация 183: Оптимизация не сошлась
+2025-04-07 09:52:02,155 - src.modules.regression_model - WARNING - Итерация 191: Оптимизация не сошлась
+2025-04-07 09:52:02,157 - src.modules.regression_model - WARNING - Итерация 192: Оптимизация не сошлась
+2025-04-07 09:52:02,160 - src.modules.regression_model - INFO - Итерация 193: RMSE = 0.338258
+2025-04-07 09:52:02,163 - src.modules.regression_model - WARNING - Итерация 194: Оптимизация не сошлась
+2025-04-07 09:52:02,171 - src.modules.regression_model - WARNING - Итерация 197: Оптимизация не сошлась
+2025-04-07 09:52:02,181 - src.modules.regression_model - WARNING - Итерация 200: Оптимизация не сошлась
+2025-04-07 09:52:02,184 - src.modules.regression_model - WARNING - Итерация 201: Оптимизация не сошлась
+2025-04-07 09:52:02,260 - src.modules.regression_model - WARNING - Итерация 221: Оптимизация не сошлась
+2025-04-07 09:52:02,274 - src.modules.regression_model - WARNING - Итерация 225: Оптимизация не сошлась
+2025-04-07 09:52:02,278 - src.modules.regression_model - INFO - Итерация 226: RMSE = 0.332275
+2025-04-07 09:52:02,285 - src.modules.regression_model - WARNING - Итерация 228: Оптимизация не сошлась
+2025-04-07 09:52:02,288 - src.modules.regression_model - WARNING - Итерация 229: Оптимизация не сошлась
+2025-04-07 09:52:02,297 - src.modules.regression_model - WARNING - Итерация 232: Оптимизация не сошлась
+2025-04-07 09:52:02,300 - src.modules.regression_model - WARNING - Итерация 233: Оптимизация не сошлась
+2025-04-07 09:52:02,309 - src.modules.regression_model - WARNING - Итерация 236: Оптимизация не сошлась
+2025-04-07 09:52:02,312 - src.modules.regression_model - WARNING - Итерация 237: Оптимизация не сошлась
+2025-04-07 09:52:02,355 - src.modules.regression_model - WARNING - Итерация 250: Оптимизация не сошлась
+2025-04-07 09:52:02,359 - src.modules.regression_model - INFO - Итерация 251: RMSE = 0.328687
+2025-04-07 09:52:02,363 - src.modules.regression_model - INFO - Итерация 252: RMSE = 0.321929
+2025-04-07 09:52:02,371 - src.modules.regression_model - WARNING - Итерация 254: Оптимизация не сошлась
+2025-04-07 09:52:02,389 - src.modules.regression_model - WARNING - Итерация 260: Оптимизация не сошлась
+2025-04-07 09:52:02,410 - src.modules.regression_model - WARNING - Итерация 266: Оптимизация не сошлась
+2025-04-07 09:52:02,421 - src.modules.regression_model - INFO - Итерация 269: RMSE = 0.311436
+2025-04-07 09:52:02,442 - src.modules.regression_model - INFO - Итерация 274: RMSE = 0.305883
+2025-04-07 09:52:02,448 - src.modules.regression_model - WARNING - Итерация 276: Оптимизация не сошлась
+2025-04-07 09:52:02,463 - src.modules.regression_model - WARNING - Итерация 281: Оптимизация не сошлась
+2025-04-07 09:52:02,511 - src.modules.regression_model - WARNING - Итерация 294: Оптимизация не сошлась
+2025-04-07 09:52:02,518 - src.modules.regression_model - WARNING - Итерация 296: Оптимизация не сошлась
+2025-04-07 09:52:02,528 - src.modules.regression_model - WARNING - Итерация 299: Оптимизация не сошлась
+2025-04-07 09:52:02,534 - src.modules.regression_model - WARNING - Итерация 301: Оптимизация не сошлась
+2025-04-07 09:52:02,554 - src.modules.regression_model - WARNING - Итерация 307: Оптимизация не сошлась
+2025-04-07 09:52:02,596 - src.modules.regression_model - WARNING - Итерация 320: Оптимизация не сошлась
+2025-04-07 09:52:02,610 - src.modules.regression_model - WARNING - Итерация 324: Оптимизация не сошлась
+2025-04-07 09:52:02,613 - src.modules.regression_model - WARNING - Итерация 325: Оптимизация не сошлась
+2025-04-07 09:52:02,620 - src.modules.regression_model - WARNING - Итерация 327: Оптимизация не сошлась
+2025-04-07 09:52:02,648 - src.modules.regression_model - WARNING - Итерация 336: Оптимизация не сошлась
+2025-04-07 09:52:02,682 - src.modules.regression_model - WARNING - Итерация 345: Оптимизация не сошлась
+2025-04-07 09:52:02,721 - src.modules.regression_model - WARNING - Итерация 356: Оптимизация не сошлась
+2025-04-07 09:52:02,764 - src.modules.regression_model - WARNING - Итерация 370: Оптимизация не сошлась
+2025-04-07 09:52:02,780 - src.modules.regression_model - WARNING - Итерация 375: Оптимизация не сошлась
+2025-04-07 09:52:02,803 - src.modules.regression_model - WARNING - Итерация 381: Оптимизация не сошлась
+2025-04-07 09:52:02,831 - src.modules.regression_model - WARNING - Итерация 388: Оптимизация не сошлась
+2025-04-07 09:52:02,844 - src.modules.regression_model - WARNING - Итерация 391: Оптимизация не сошлась
+2025-04-07 09:52:02,862 - src.modules.regression_model - WARNING - Итерация 395: Оптимизация не сошлась
+2025-04-07 09:52:02,880 - src.modules.regression_model - WARNING - Итерация 400: Оптимизация не сошлась
+2025-04-07 09:52:02,883 - src.modules.regression_model - WARNING - Итерация 401: Оптимизация не сошлась
+2025-04-07 09:52:02,926 - src.modules.regression_model - WARNING - Итерация 413: Оптимизация не сошлась
+2025-04-07 09:52:02,944 - src.modules.regression_model - WARNING - Итерация 418: Оптимизация не сошлась
+2025-04-07 09:52:02,956 - src.modules.regression_model - WARNING - Итерация 421: Оптимизация не сошлась
+2025-04-07 09:52:02,959 - src.modules.regression_model - WARNING - Итерация 422: Оптимизация не сошлась
+2025-04-07 09:52:02,972 - src.modules.regression_model - WARNING - Итерация 426: Оптимизация не сошлась
+2025-04-07 09:52:02,985 - src.modules.regression_model - WARNING - Итерация 430: Оптимизация не сошлась
+2025-04-07 09:52:03,084 - src.modules.regression_model - WARNING - Итерация 456: Оптимизация не сошлась
+2025-04-07 09:52:03,096 - src.modules.regression_model - WARNING - Итерация 460: Оптимизация не сошлась
+2025-04-07 09:52:03,143 - src.modules.regression_model - WARNING - Итерация 473: Оптимизация не сошлась
+2025-04-07 09:52:03,193 - src.modules.regression_model - WARNING - Итерация 487: Оптимизация не сошлась
+2025-04-07 09:52:03,199 - src.modules.regression_model - WARNING - Итерация 489: Оптимизация не сошлась
+2025-04-07 09:52:03,202 - src.modules.regression_model - WARNING - Итерация 490: Оптимизация не сошлась
+2025-04-07 09:52:03,221 - src.modules.regression_model - WARNING - Итерация 496: Оптимизация не сошлась
+2025-04-07 09:52:03,244 - src.modules.regression_model - WARNING - Итерация 503: Оптимизация не сошлась
+2025-04-07 09:52:03,357 - src.modules.regression_model - WARNING - Итерация 537: Оптимизация не сошлась
+2025-04-07 09:52:03,370 - src.modules.regression_model - WARNING - Итерация 541: Оптимизация не сошлась
+2025-04-07 09:52:03,420 - src.modules.regression_model - WARNING - Итерация 555: Оптимизация не сошлась
+2025-04-07 09:52:03,449 - src.modules.regression_model - WARNING - Итерация 564: Оптимизация не сошлась
+2025-04-07 09:52:03,454 - src.modules.regression_model - WARNING - Итерация 566: Оптимизация не сошлась
+2025-04-07 09:52:03,462 - src.modules.regression_model - WARNING - Итерация 568: Оптимизация не сошлась
+2025-04-07 09:52:03,513 - src.modules.regression_model - WARNING - Итерация 584: Оптимизация не сошлась
+2025-04-07 09:52:03,530 - src.modules.regression_model - WARNING - Итерация 589: Оптимизация не сошлась
+2025-04-07 09:52:03,539 - src.modules.regression_model - WARNING - Итерация 592: Оптимизация не сошлась
+2025-04-07 09:52:03,606 - src.modules.regression_model - WARNING - Итерация 612: Оптимизация не сошлась
+2025-04-07 09:52:03,613 - src.modules.regression_model - WARNING - Итерация 614: Оптимизация не сошлась
+2025-04-07 09:52:03,646 - src.modules.regression_model - WARNING - Итерация 624: Оптимизация не сошлась
+2025-04-07 09:52:03,661 - src.modules.regression_model - WARNING - Итерация 629: Оптимизация не сошлась
+2025-04-07 09:52:03,664 - src.modules.regression_model - WARNING - Итерация 630: Оптимизация не сошлась
+2025-04-07 09:52:03,687 - src.modules.regression_model - WARNING - Итерация 637: Оптимизация не сошлась
+2025-04-07 09:52:03,698 - src.modules.regression_model - WARNING - Итерация 641: Оптимизация не сошлась
+2025-04-07 09:52:03,716 - src.modules.regression_model - WARNING - Итерация 647: Оптимизация не сошлась
+2025-04-07 09:52:03,746 - src.modules.regression_model - WARNING - Итерация 656: Оптимизация не сошлась
+2025-04-07 09:52:03,761 - src.modules.regression_model - WARNING - Итерация 660: Оптимизация не сошлась
+2025-04-07 09:52:03,778 - src.modules.regression_model - WARNING - Итерация 665: Оптимизация не сошлась
+2025-04-07 09:52:03,798 - src.modules.regression_model - WARNING - Итерация 671: Оптимизация не сошлась
+2025-04-07 09:52:03,840 - src.modules.regression_model - WARNING - Итерация 683: Оптимизация не сошлась
+2025-04-07 09:52:03,854 - src.modules.regression_model - WARNING - Итерация 687: Оптимизация не сошлась
+2025-04-07 09:52:03,880 - src.modules.regression_model - WARNING - Итерация 695: Оптимизация не сошлась
+2025-04-07 09:52:03,911 - src.modules.regression_model - WARNING - Итерация 703: Оптимизация не сошлась
+2025-04-07 09:52:03,916 - src.modules.regression_model - WARNING - Итерация 705: Оптимизация не сошлась
+2025-04-07 09:52:03,926 - src.modules.regression_model - WARNING - Итерация 708: Оптимизация не сошлась
+2025-04-07 09:52:03,929 - src.modules.regression_model - WARNING - Итерация 709: Оптимизация не сошлась
+2025-04-07 09:52:03,943 - src.modules.regression_model - WARNING - Итерация 714: Оптимизация не сошлась
+2025-04-07 09:52:03,946 - src.modules.regression_model - WARNING - Итерация 715: Оптимизация не сошлась
+2025-04-07 09:52:04,001 - src.modules.regression_model - WARNING - Итерация 732: Оптимизация не сошлась
+2025-04-07 09:52:04,056 - src.modules.regression_model - WARNING - Итерация 747: Оптимизация не сошлась
+2025-04-07 09:52:04,082 - src.modules.regression_model - WARNING - Итерация 755: Оптимизация не сошлась
+2025-04-07 09:52:04,109 - src.modules.regression_model - WARNING - Итерация 763: Оптимизация не сошлась
+2025-04-07 09:52:04,134 - src.modules.regression_model - WARNING - Итерация 770: Оптимизация не сошлась
+2025-04-07 09:52:04,136 - src.modules.regression_model - WARNING - Итерация 771: Оптимизация не сошлась
+2025-04-07 09:52:04,142 - src.modules.regression_model - WARNING - Итерация 773: Оптимизация не сошлась
+2025-04-07 09:52:04,170 - src.modules.regression_model - WARNING - Итерация 782: Оптимизация не сошлась
+2025-04-07 09:52:04,190 - src.modules.regression_model - WARNING - Итерация 788: Оптимизация не сошлась
+2025-04-07 09:52:04,205 - src.modules.regression_model - WARNING - Итерация 793: Оптимизация не сошлась
+2025-04-07 09:52:04,211 - src.modules.regression_model - INFO - Итерация 795: RMSE = 0.304803
+2025-04-07 09:52:04,226 - src.modules.regression_model - WARNING - Итерация 800: Оптимизация не сошлась
+2025-04-07 09:52:04,229 - src.modules.regression_model - WARNING - Итерация 801: Оптимизация не сошлась
+2025-04-07 09:52:04,239 - src.modules.regression_model - WARNING - Итерация 804: Оптимизация не сошлась
+2025-04-07 09:52:04,259 - src.modules.regression_model - WARNING - Итерация 810: Оптимизация не сошлась
+2025-04-07 09:52:04,319 - src.modules.regression_model - WARNING - Итерация 827: Оптимизация не сошлась
+2025-04-07 09:52:04,324 - src.modules.regression_model - WARNING - Итерация 829: Оптимизация не сошлась
+2025-04-07 09:52:04,334 - src.modules.regression_model - WARNING - Итерация 832: Оптимизация не сошлась
+2025-04-07 09:52:04,337 - src.modules.regression_model - WARNING - Итерация 833: Оптимизация не сошлась
+2025-04-07 09:52:04,399 - src.modules.regression_model - WARNING - Итерация 853: Оптимизация не сошлась
+2025-04-07 09:52:04,443 - src.modules.regression_model - WARNING - Итерация 866: Оптимизация не сошлась
+2025-04-07 09:52:04,456 - src.modules.regression_model - WARNING - Итерация 870: Оптимизация не сошлась
+2025-04-07 09:52:04,500 - src.modules.regression_model - WARNING - Итерация 882: Оптимизация не сошлась
+2025-04-07 09:52:04,503 - src.modules.regression_model - WARNING - Итерация 883: Оптимизация не сошлась
+2025-04-07 09:52:04,519 - src.modules.regression_model - WARNING - Итерация 887: Оптимизация не сошлась
+2025-04-07 09:52:04,555 - src.modules.regression_model - WARNING - Итерация 898: Оптимизация не сошлась
+2025-04-07 09:52:04,577 - src.modules.regression_model - WARNING - Итерация 905: Оптимизация не сошлась
+2025-04-07 09:52:04,591 - src.modules.regression_model - WARNING - Итерация 910: Оптимизация не сошлась
+2025-04-07 09:52:04,612 - src.modules.regression_model - WARNING - Итерация 916: Оптимизация не сошлась
+2025-04-07 09:52:04,650 - src.modules.regression_model - WARNING - Итерация 927: Оптимизация не сошлась
+2025-04-07 09:52:04,653 - src.modules.regression_model - WARNING - Итерация 928: Оптимизация не сошлась
+2025-04-07 09:52:04,659 - src.modules.regression_model - WARNING - Итерация 930: Оптимизация не сошлась
+2025-04-07 09:52:04,713 - src.modules.regression_model - WARNING - Итерация 945: Оптимизация не сошлась
+2025-04-07 09:52:04,719 - src.modules.regression_model - WARNING - Итерация 947: Оптимизация не сошлась
+2025-04-07 09:52:04,722 - src.modules.regression_model - WARNING - Итерация 948: Оптимизация не сошлась
+2025-04-07 09:52:04,740 - src.modules.regression_model - WARNING - Итерация 953: Оптимизация не сошлась
+2025-04-07 09:52:04,743 - src.modules.regression_model - WARNING - Итерация 954: Оптимизация не сошлась
+2025-04-07 09:52:04,750 - src.modules.regression_model - WARNING - Итерация 956: Оптимизация не сошлась
+2025-04-07 09:52:04,763 - src.modules.regression_model - WARNING - Итерация 960: Оптимизация не сошлась
+2025-04-07 09:52:04,777 - src.modules.regression_model - WARNING - Итерация 964: Оптимизация не сошлась
+2025-04-07 09:52:04,780 - src.modules.regression_model - WARNING - Итерация 965: Оптимизация не сошлась
+2025-04-07 09:52:04,794 - src.modules.regression_model - WARNING - Итерация 969: Оптимизация не сошлась
+2025-04-07 09:52:04,818 - src.modules.regression_model - WARNING - Итерация 975: Оптимизация не сошлась
+2025-04-07 09:52:04,849 - src.modules.regression_model - WARNING - Итерация 984: Оптимизация не сошлась
+2025-04-07 09:52:04,882 - src.modules.regression_model - WARNING - Итерация 994: Оптимизация не сошлась
+2025-04-07 09:52:04,890 - src.modules.regression_model - WARNING - Итерация 996: Оптимизация не сошлась
+2025-04-07 09:52:04,902 - src.modules.regression_model - WARNING - Итерация 1000: Оптимизация не сошлась
+2025-04-07 09:52:04,902 - src.modules.regression_model - INFO - Параметры модели успешно подобраны
+2025-04-07 09:52:04,902 - src.modules.regression_model - INFO - Оптимальные параметры: {'Srw': np.float64(0.2114158453049312), 'krw_max': np.float64(0.26799186243376194), 'Sro': np.float64(0.34086971545562444), 'kro_max': np.float64(0.06594099285456635)}
+2025-04-07 09:52:04,902 - src.modules.regression_model - INFO - Итоговая RMSE: 0.304803
+2025-04-07 09:52:04,902 - __main__ - INFO - Результаты итеративного подбора регрессионной моделью:
+2025-04-07 09:52:04,902 - __main__ - INFO - Результаты итеративного подбора регрессионной моделью:
+
+- Среднеквадратичная ошибка (RMSE): 0.304803
+- Достигнута требуемая точность (<0.001): Нет
+
+Оптимальные параметры:
+- Srw: 0.211416
+- krw_max: 0.267992
+- Sro: 0.340870
+- kro_max: 0.065941
+
+2025-04-07 09:52:04,902 - __main__ - INFO - 
+=== Этап 3: Граничные условия изменения при автоматическом расчете Рпл ===
+2025-04-07 09:52:04,902 - src.data_loader - INFO - Подготовка данных для модуля 3 (расчет пластового давления)
+2025-04-07 09:52:04,902 - src.data_loader - INFO - Данные для модуля 3 успешно подготовлены
+2025-04-07 09:52:04,902 - src.modules.pressure_calculation - INFO - Модель расчета пластового давления инициализирована данными
+2025-04-07 09:52:04,902 - src.modules.pressure_calculation - INFO - Начинаем расчет пластовых давлений...
+2025-04-07 09:52:04,903 - src.modules.pressure_calculation - INFO - Расчет пластовых давлений успешно выполнен
+2025-04-07 09:52:04,903 - src.modules.pressure_calculation - INFO - Применяем граничные условия к расчетным значениям давления...
+2025-04-07 09:52:04,905 - src.modules.pressure_calculation - INFO - Граничные условия успешно применены
+2025-04-07 09:52:05,157 - src.modules.pressure_calculation - INFO - График сохранен в C:\Users\User\Desktop\Nisty\oil_well_modeling\output\pressure_changes.png
+2025-04-07 09:52:05,157 - __main__ - INFO - Результаты расчета пластовых давлений:
+2025-04-07 09:52:05,158 - __main__ - INFO - Результаты расчета пластовых давлений с учетом граничных условий:
+
+Общая статистика:
+- Количество скважин: 10
+- Среднее начальное давление: 220.59 атм
+- Среднее рассчитанное давление: 202.44 атм
+- Среднее скорректированное давление: 212.35 атм
+- Количество скважин с примененными граничными условиями: 5
+
+Пример результатов (первые 5 скважин):
+     Well  Initial_Pressure  Calculated_Pressure  Difference  Adjusted_Pressure  Boundary_Applied
+0  Well_1        233.150913           214.794297   18.356616         218.150913              True
+1  Well_2        206.121446           199.968650    6.152796         199.968650             False
+2  Well_3        229.571401           195.700986   33.870415         214.571401              True
+3  Well_4        233.466454           180.679791   52.786663         218.466454              True
+4  Well_5        203.163561           207.195394   -4.031833         207.195394             False
+
+
+2025-04-07 09:52:05,158 - __main__ - INFO - 
+=== Этап 4: Подбор времени восстановления давления в остановленных скважинах ===
+2025-04-07 09:52:05,158 - src.data_loader - INFO - Подготовка данных для модуля 4 (время восстановления давления)
+2025-04-07 09:52:05,158 - src.data_loader - INFO - Данные для модуля 4 успешно подготовлены
+2025-04-07 09:52:05,158 - src.modules.pressure_recovery - INFO - Модель расчета времени восстановления давления инициализирована данными
+2025-04-07 09:52:05,158 - src.modules.pressure_recovery - INFO - Начинаем расчет времени восстановления давления...
+2025-04-07 09:52:05,160 - src.modules.pressure_recovery - INFO - Расчет времени восстановления давления успешно выполнен
+2025-04-07 09:52:05,166 - src.modules.pressure_recovery - ERROR - Ошибка при построении графика: -1
+2025-04-07 09:52:05,747 - src.modules.pressure_recovery - INFO - График зависимостей сохранен в C:\Users\User\Desktop\Nisty\oil_well_modeling\output\recovery_parameters_influence.png
+2025-04-07 09:52:05,747 - __main__ - INFO - Результаты расчета времени восстановления давления:
+2025-04-07 09:52:05,750 - __main__ - INFO - Результаты расчета времени восстановления давления:
+
+Общая статистика:
+- Количество скважин: 10
+- Минимальное время восстановления: 0.00 сут.
+- Максимальное время восстановления: 0.00 сут.
+- Среднее время восстановления: 0.00 сут.
+
+Пример результатов (первые 5 скважин):
+     Well  Permeability  Porosity  Viscosity  Skin_Factor  Recovery_Time
+0  Well_1     77.152352  0.100770   4.993639     0.382059       0.000028
+1  Well_2     93.370822  0.241307   4.784527     3.808101       0.000072
+2  Well_3     35.477622  0.292923   3.283713     3.490509       0.000103
+3  Well_4     20.269293  0.291003   1.093805    -1.677302            NaN
+4  Well_5     93.578278  0.269055   1.330270     4.725888       0.000044
+
+Интерпретация результатов:
+- Время восстановления давления зависит от проницаемости, пористости, вязкости флюида и скин-фактора.
+- Скважины с высоким скин-фактором требуют больше времени для восстановления давления.
+- Скважины с низкой проницаемостью также требуют больше времени для восстановления давления.
+
+2025-04-07 09:52:05,750 - __main__ - INFO - 
+=== Этап 5: Подбор кривой увеличения SKIN после ГРП ===
+2025-04-07 09:52:05,750 - src.data_loader - INFO - Подготовка данных для модуля 5 (кривая увеличения SKIN)
+2025-04-07 09:52:05,750 - src.data_loader - INFO - Данные для модуля 5 успешно подготовлены
+2025-04-07 09:52:05,751 - src.modules.skin_curve - INFO - Модель кривой увеличения SKIN инициализирована данными
+2025-04-07 09:52:05,751 - src.modules.skin_curve - INFO - Начинаем подбор параметров модели кривой SKIN...
+2025-04-07 09:52:05,771 - src.modules.skin_curve - INFO - Параметры модели кривой SKIN успешно подобраны
+2025-04-07 09:52:05,771 - src.modules.skin_curve - INFO - Оптимальные параметры: {'initial_skin': np.float64(-2.9381668536007366), 'max_skin': np.float64(0.3410740660180944), 'growth_rate': np.float64(0.009360761346082283)}
+2025-04-07 09:52:06,031 - src.modules.skin_curve - INFO - График сохранен в C:\Users\User\Desktop\Nisty\oil_well_modeling\output\skin_curve.png
+2025-04-07 09:52:06,031 - __main__ - INFO - Результаты подбора кривой увеличения SKIN:
+2025-04-07 09:52:06,031 - __main__ - INFO - Результаты подбора кривой увеличения SKIN после ГРП:
+
+Оптимальные параметры модели:
+- Начальный скин-фактор: -2.9382
+- Максимальный скин-фактор: 0.3411
+- Скорость роста скин-фактора: 0.009361
+
+Прогноз изменения скин-фактора:
+- Через 0 дней: -2.9382
+- Через 30 дней: -2.1353
+- Через 90 дней: -1.0711
+- Через 180 дней: -0.2671
+- Через 365 дней: 0.2334
+- Через 730 дней: 0.3375
+
+2025-04-07 09:52:06,031 - __main__ - INFO - 
+=== Этап 6: Подбор к-та уменьшения работающей части фильтра ===
+2025-04-07 09:52:06,031 - src.data_loader - INFO - Подготовка данных для модуля 6 (уменьшение работающей части фильтра)
+2025-04-07 09:52:06,031 - src.data_loader - INFO - Данные для модуля 6 успешно подготовлены
+2025-04-07 09:52:06,032 - src.modules.filter_reduction - INFO - Модель коэффициента уменьшения работающей части фильтра инициализирована данными
+2025-04-07 09:52:06,032 - src.modules.filter_reduction - INFO - Начинаем подбор параметров модели коэффициента уменьшения...
+2025-04-07 09:52:06,033 - src.modules.filter_reduction - INFO - Параметры модели коэффициента уменьшения успешно подобраны
+2025-04-07 09:52:06,033 - src.modules.filter_reduction - INFO - Оптимальные параметры: {'initial_coeff': np.float64(0.9958830925497936), 'min_coeff': np.float64(0.5257411944644577), 'reduction_rate': np.float64(0.0034741012595775863)}
+2025-04-07 09:52:06,284 - src.modules.filter_reduction - INFO - График сохранен в C:\Users\User\Desktop\Nisty\oil_well_modeling\output\filter_reduction_curve.png
+2025-04-07 09:52:06,284 - __main__ - INFO - Результаты подбора к-та уменьшения работающей части фильтра:
+2025-04-07 09:52:06,284 - __main__ - INFO - Результаты подбора коэффициента уменьшения работающей части фильтра:
+
+Оптимальные параметры модели:
+- Начальный коэффициент: 0.9959
+- Минимальный коэффициент: 0.5257
+- Скорость уменьшения: 0.003474
+
+Прогноз изменения коэффициента работающей части фильтра:
+- Через 0 дней: 0.9959
+- Через 90 дней: 0.8696
+- Через 180 дней: 0.7773
+- Через 365 дней: 0.6580
+- Через 730 дней: 0.5630
+- Через 1095 дней: 0.5362
+- Через 1825 дней: 0.5266
+
+Физическая интерпретация:
+- Начальное значение коэффициента близко к 1.0, что соответствует полностью работающему фильтру.
+- Минимальное значение 0.53 означает, что со временем эффективная длина фильтра
+  уменьшается до 52.6% от начальной длины.
+- При текущей скорости уменьшения через 1 год коэффициент составит 0.66,
+  а через 5 лет - 0.53.
+
+2025-04-07 09:52:06,284 - __main__ - INFO - 
+=== Этап 7: Подбор коэффициентов для расчета полудлин трещин ===
+2025-04-07 09:52:06,284 - src.data_loader - INFO - Подготовка данных для модуля 7 (расчет полудлин трещин)
+2025-04-07 09:52:06,284 - src.data_loader - INFO - Данные для модуля 7 успешно подготовлены
+2025-04-07 09:52:06,285 - src.modules.fracture_length - INFO - Модель расчета полудлин трещин инициализирована данными
+2025-04-07 09:52:06,285 - src.modules.fracture_length - INFO - Начинаем подбор коэффициентов для расчета полудлин трещин...
+2025-04-07 09:52:06,286 - src.modules.fracture_length - INFO - Коэффициенты для расчета полудлин трещин успешно подобраны
+2025-04-07 09:52:06,286 - src.modules.fracture_length - INFO - Оптимальные коэффициенты: a = 3.4710, b = 0.3335
+2025-04-07 09:52:06,527 - src.modules.fracture_length - INFO - График сохранен в C:\Users\User\Desktop\Nisty\oil_well_modeling\output\fracture_length_curve.png
+2025-04-07 09:52:06,942 - src.modules.fracture_length - INFO - График в логарифмических координатах сохранен в C:\Users\User\Desktop\Nisty\oil_well_modeling\output\fracture_length_loglog_loglog.png
+2025-04-07 09:52:06,943 - __main__ - INFO - Результаты подбора коэффициентов для расчета полудлин трещин:
+2025-04-07 09:52:06,974 - __main__ - INFO - 
+=== Этап 8: РАСЧЁТ ДОБЫВАЮЩИХ СКВАЖИН ===
+2025-04-07 09:52:06,974 - src.data_loader - INFO - Подготовка данных для модуля 8 (расчет добывающих скважин)
+2025-04-07 09:52:06,974 - src.data_loader - INFO - Данные для модуля 8 успешно подготовлены
+2025-04-07 09:52:06,974 - src.modules.production_wells - INFO - Модель расчета добывающих скважин инициализирована данными
+2025-04-07 09:52:06,974 - src.modules.production_wells - INFO - Начинаем комплексный расчет параметров добывающих скважин...
+2025-04-07 09:52:06,977 - src.modules.production_wells - INFO - Расчет параметров добывающих скважин успешно выполнен
+2025-04-07 09:52:06,977 - src.modules.production_wells - INFO - Прогнозирование добычи на 365 дней...
+2025-04-07 09:52:07,014 - src.modules.production_wells - INFO - Прогнозирование добычи успешно выполнено
+2025-04-07 09:52:07,621 - src.modules.production_wells - INFO - График профилей добычи сохранен в C:\Users\User\Desktop\Nisty\oil_well_modeling\output\production_profiles.png
+2025-04-07 09:52:07,872 - src.modules.production_wells - INFO - График накопленной добычи сохранен в C:\Users\User\Desktop\Nisty\oil_well_modeling\output\cumulative_production_cumulative.png
+2025-04-07 09:52:07,872 - __main__ - INFO - Результаты расчета добывающих скважин:
+2025-04-07 09:52:07,882 - __main__ - INFO - 
+=== Экспорт результатов всех модулей ===
+2025-04-07 09:52:07,882 - scripts.export_results - INFO - Начинаем экспорт результатов
+2025-04-07 09:52:07,933 - scripts.export_results - INFO - Параметры моделей успешно экспортированы в: C:\Users\User\Desktop\Nisty\oil_well_modeling\output\results\model_parameters.xlsx
+2025-04-07 09:52:07,939 - scripts.export_results - INFO - Данные успешно экспортированы в CSV: C:\Users\User\Desktop\Nisty\oil_well_modeling\output\results\pressure_calculation\pressure_calculation_results.csv
+2025-04-07 09:52:07,952 - scripts.export_results - INFO - Данные успешно экспортированы в Excel: C:\Users\User\Desktop\Nisty\oil_well_modeling\output\results\pressure_calculation\pressure_calculation_results.xlsx
+2025-04-07 09:52:07,955 - scripts.export_results - INFO - Данные успешно экспортированы в JSON: C:\Users\User\Desktop\Nisty\oil_well_modeling\output\results\pressure_calculation\pressure_calculation_results.json
+2025-04-07 09:52:07,956 - scripts.export_results - INFO - Данные успешно экспортированы в CSV: C:\Users\User\Desktop\Nisty\oil_well_modeling\output\results\pressure_recovery\pressure_recovery_results.csv
+2025-04-07 09:52:07,969 - scripts.export_results - INFO - Данные успешно экспортированы в Excel: C:\Users\User\Desktop\Nisty\oil_well_modeling\output\results\pressure_recovery\pressure_recovery_results.xlsx
+2025-04-07 09:52:07,971 - scripts.export_results - INFO - Данные успешно экспортированы в JSON: C:\Users\User\Desktop\Nisty\oil_well_modeling\output\results\pressure_recovery\pressure_recovery_results.json
+2025-04-07 09:52:07,972 - scripts.export_results - INFO - Данные успешно экспортированы в CSV: C:\Users\User\Desktop\Nisty\oil_well_modeling\output\results\production_wells\production_wells_results.csv
+2025-04-07 09:52:07,985 - scripts.export_results - INFO - Данные успешно экспортированы в Excel: C:\Users\User\Desktop\Nisty\oil_well_modeling\output\results\production_wells\production_wells_results.xlsx
+2025-04-07 09:52:07,986 - scripts.export_results - INFO - Данные успешно экспортированы в JSON: C:\Users\User\Desktop\Nisty\oil_well_modeling\output\results\production_wells\production_wells_results.json
+2025-04-07 09:52:07,988 - scripts.export_results - INFO - Данные успешно экспортированы в CSV: C:\Users\User\Desktop\Nisty\oil_well_modeling\output\results\production_wells\forecast_results.csv
+2025-04-07 09:52:08,015 - scripts.export_results - INFO - Данные успешно экспортированы в Excel: C:\Users\User\Desktop\Nisty\oil_well_modeling\output\results\production_wells\forecast_results.xlsx
+2025-04-07 09:52:08,019 - scripts.export_results - INFO - Данные успешно экспортированы в JSON: C:\Users\User\Desktop\Nisty\oil_well_modeling\output\results\production_wells\forecast_results.json
+2025-04-07 09:52:08,019 - scripts.export_results - INFO - Результаты моделей успешно экспортированы в директорию: C:\Users\User\Desktop\Nisty\oil_well_modeling\output\results
+2025-04-07 09:52:08,195 - src.modules.pressure_recovery - ERROR - Ошибка при построении графика: -1
+2025-04-07 09:52:09,583 - src.visualization.plotting - INFO - Отчет успешно создан и сохранен в C:\Users\User\Desktop\Nisty\oil_well_modeling\output\report_20250407_095208.pdf
+2025-04-07 09:52:09,583 - scripts.export_results - INFO - Отчет успешно создан и сохранен в: C:\Users\User\Desktop\Nisty\oil_well_modeling\output\report_20250407_095208.pdf
+2025-04-07 09:52:09,583 - scripts.export_results - INFO - Экспорт результатов успешно завершен
+2025-04-07 09:52:09,583 - __main__ - INFO - Экспорт результатов успешно выполнен
+2025-04-07 09:52:09,583 - __main__ - INFO - Расчетная схема Пушкиной Т.В. успешно выполнена
