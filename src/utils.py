@@ -160,6 +160,7 @@ def fit_relative_permeability_curves(sw_data, krw_data, kro_data, initial_params
         dict: Оптимальные значения параметров
     """
 
+
     # Функция ошибки, которую нужно минимизировать
     def error_function(params):
         Swo, Swk, krwk, krok, nw, no = params
@@ -208,6 +209,56 @@ def fit_relative_permeability_curves(sw_data, krw_data, kro_data, initial_params
     }
 
     return optimized_params
+
+
+def plot_well_distribution(status_counts, title, output_path=None):
+    """
+    Построение круговой диаграммы распределения скважин.
+
+    Args:
+        status_counts (pd.Series): Серия с количеством скважин по категориям
+        title (str): Заголовок диаграммы
+        output_path (str, optional): Путь для сохранения графика
+
+    Returns:
+        plt.Figure: Объект фигуры matplotlib
+    """
+    fig, ax = plt.subplots(figsize=(12, 8))
+
+    # Задаем цвета для разных категорий
+    colors = plt.cm.Set3(np.linspace(0, 1, len(status_counts)))
+
+    wedges, texts, autotexts = ax.pie(
+        status_counts,
+        labels=status_counts.index,
+        autopct='%1.1f%%',
+        textprops={'fontsize': 10},
+        colors=colors,
+        shadow=True,
+        startangle=90
+    )
+
+    # Улучшение читаемости
+    plt.setp(autotexts, size=8, weight="bold")
+    ax.set_title(title)
+
+    # Добавление легенды
+    ax.legend(
+        wedges,
+        [f"{label} ({count})" for label, count in zip(status_counts.index, status_counts)],
+        title="Категории",
+        loc="center left",
+        bbox_to_anchor=(1, 0, 0.5, 1)
+    )
+
+    plt.tight_layout()
+
+    # Сохранение графика, если указан путь
+    if output_path:
+        plt.savefig(output_path, dpi=300, bbox_inches='tight')
+        logger.info(f"График сохранен в {output_path}")
+
+    return fig
 
 
 def plot_relative_permeability_curves(Swo, Swk, krwk, krok, nw, no, output_path=None):

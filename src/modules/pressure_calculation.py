@@ -176,6 +176,207 @@ class PressureCalculationModel:
             logger.error(f"Ошибка при построении графика: {str(e)}")
             return None
 
+    def apply_geological_boundaries(self):
+        """
+        Применение граничных условий по геологии пласта.
+
+        Returns:
+            bool: True если применение выполнено успешно, иначе False
+        """
+        if self.results is None:
+            logger.error("Сначала выполните расчет давлений")
+            return False
+
+        logger.info("Применяем граничные условия по геологии пласта...")
+
+        try:
+            # Получаем геологические данные
+            geo_data = self.data.get('nnt_ngt_data')
+
+            if geo_data is None:
+                logger.warning("Отсутствуют геологические данные, создаем синтетические границы")
+
+                # Создаем синтетические геологические ограничения
+                # В реальном проекте эти данные будут извлекаться из геологических моделей
+
+                # Определяем верхнюю и нижнюю границы по геологии
+                initial_pressure = self.results['Initial_Pressure'].mean()
+                std_dev = self.results['Initial_Pressure'].std()
+
+                upper_geo_limit = initial_pressure * 1.2  # 20% выше среднего
+                lower_geo_limit = initial_pressure * 0.8  # 20% ниже среднего
+
+                # В реальности здесь будет сложная логика определения граничных условий
+                # на основе геологических данных пласта
+
+            else:
+                # Извлекаем границы из геологических данных
+                # В зависимости от структуры данных это может быть реализовано по-разному
+
+                if isinstance(geo_data, dict):
+                    # Если данные представлены словарем с листами
+                    # Ищем лист с данными о пластовом давлении
+                    pressure_sheets = [sheet for sheet in geo_data.keys()
+                                       if 'давлен' in sheet.lower() or 'pressure' in sheet.lower()]
+
+                    if pressure_sheets:
+                        pressure_sheet = pressure_sheets[0]
+                        pressure_data = geo_data[pressure_sheet]
+
+                        # Ищем колонки с граничными значениями
+                        min_columns = [col for col in pressure_data.columns
+                                       if 'min' in col.lower() or 'нижн' in col.lower()]
+
+                        max_columns = [col for col in pressure_data.columns
+                                       if 'max' in col.lower() or 'верхн' in col.lower()]
+
+                        if min_columns and max_columns:
+                            lower_geo_limit = pressure_data[min_columns[0]].mean()
+                            upper_geo_limit = pressure_data[max_columns[0]].mean()
+                        else:
+                            # Если не нашли нужные колонки, используем статистику
+                            logger.warning("Не найдены колонки с граничными значениями давления")
+                            lower_geo_limit = pressure_data.iloc[:, 1].quantile(0.1)  # 10-й перцентиль
+                            upper_geo_limit = pressure_data.iloc[:, 1].quantile(0.9)  # 90-й перцентиль
+                    else:
+                        # Если не нашли нужный лист, используем общую статистику
+                        logger.warning("Не найден лист с данными о пластовом давлении")
+                        initial_pressure = self.results['Initial_Pressure'].mean()
+                        std_dev = self.results['Initial_Pressure'].std()
+
+                        lower_geo_limit = initial_pressure - 2 * std_dev
+                        upper_geo_limit = initial_pressure + 2 * std_dev
+                else:
+                    # Если данные представлены одним датафреймом
+                    # Ищем колонки с граничными значениями
+                    min_columns = [col for col in geo_data.columns
+                                   if 'min' in col.lower() or 'нижн' in col.lower()]
+
+                    max_columns = [col for col in geo_data.columns
+                                   if 'max' in col.lower() or 'верхн' in col.lower()]
+
+                    if min_columns and max_columns:
+                        lower_geo_limit = geo_data[min_columns[0]].mean()
+                        upper_geo_limit = geo_data[max_columns[0]].mean()
+                    else:
+                        # Если не нашли нужные колонки, используем статистику
+                        logger.warning("Не найдены колонки с граничными значениями давления")
+                        pressure_columns = [col for col in geo_data.columns
+                                            if 'давлен' in col.lower() or 'pressure' in col.lower()]
+
+                        if pressure_columns:
+                            lower_geo_limit = geo_data[pressure_columns[0]].quantile(0.1)  # 10-й перцентиль
+                            upper_geo_limit = geo_data[pressure_columns[0]].quantile(0.9)  # 90-й перцентиль
+                        else:
+                            # Если не нашли нужные колонки, используем общую статистику
+                            initial_pressure = self.results['Initial_Pressure'].mean()
+                            std_dev = self.results['Initial_Pressure'].std()
+
+                            lower_geo_limit = initial_pressure - 2 * std_dev
+                            upper_geo_limit = initial_pressure + 2 * std_dev
+
+            # Применяем граничные условия к расчетным значениям давления
+            # Создаем новый столбец для скорректированных давлений с учетом геологии
+            if 'Adjusted_Pressure' not in self.results.columns:
+                self.results['Adjusted_Pressure'] = self.results['Calculated_Pressure'].copy()
+
+            # Применяем верхнюю границу
+            upper_mask = self.results['Adjusted_Pressure'] > upper_geo_limit
+            self.results.loc[upper_mask, 'Adjusted_Pressure'] = upper_geo_limit
+
+            # Применяем нижнюю границу
+            lower_mask = self.results['Adjusted_Pressure'] < lower_geo_limit
+            self.results.loc[lower_mask, 'Adjusted_Pressure'] = lower_geo_limit
+
+            # Добавляем информацию о примененных геологических ограничениях
+            self.results['Geo_Boundary_Applied'] = upper_mask | lower_mask
+            self.results['Geo_Upper_Limit'] = upper_geo_limit
+            self.results['Geo_Lower_Limit'] = lower_geo_limit
+
+            # Подсчитываем количество скважин с примененными ограничениями
+            upper_count = sum(upper_mask)
+            lower_count = sum(lower_mask)
+            total_count = sum(upper_mask | lower_mask)
+
+            logger.info(f"Применены геологические ограничения для {total_count} скважин")
+            logger.info(f"- Верхняя граница ({upper_geo_limit:.2f} атм) применена для {upper_count} скважин")
+            logger.info(f"- Нижняя граница ({lower_geo_limit:.2f} атм) применена для {lower_count} скважин")
+
+            return True
+
+        except Exception as e:
+            logger.error(f"Ошибка при применении геологических граничных условий: {str(e)}")
+            return False
+
+    def plot_pressure_geology_boundaries(self, output_path=None):
+        """
+        Построение графика давлений с геологическими границами.
+
+        Args:
+            output_path (str, optional): Путь для сохранения графика
+
+        Returns:
+            plt.Figure: Объект фигуры matplotlib
+        """
+        if self.results is None or 'Geo_Upper_Limit' not in self.results.columns:
+            logger.error("Сначала примените геологические граничные условия")
+            return None
+
+        try:
+            # Получаем данные
+            wells = self.results['Well']
+            calculated = self.results['Calculated_Pressure']
+            adjusted = self.results['Adjusted_Pressure']
+            upper_limit = self.results['Geo_Upper_Limit'].iloc[0]  # Одинаковое для всех скважин
+            lower_limit = self.results['Geo_Lower_Limit'].iloc[0]  # Одинаковое для всех скважин
+
+            # Сортируем скважины по расчетному давлению для лучшей визуализации
+            sorted_indices = np.argsort(calculated.values)
+            wells = wells.values[sorted_indices]
+            calculated = calculated.values[sorted_indices]
+            adjusted = adjusted.values[sorted_indices]
+
+            # Построение графика
+            fig, ax = plt.subplots(figsize=(14, 8))
+
+            # Расчетные и скорректированные давления
+            ax.plot(wells, calculated, 'bo-', label='Расчетное давление')
+            ax.plot(wells, adjusted, 'ro-', label='Скорректированное давление')
+
+            # Геологические границы
+            ax.axhline(y=upper_limit, color='g', linestyle='--', label=f'Верхняя граница ({upper_limit:.2f} атм)')
+            ax.axhline(y=lower_limit, color='orange', linestyle='--', label=f'Нижняя граница ({lower_limit:.2f} атм)')
+
+            # Заливка областей за пределами границ
+            ax.fill_between(wells, upper_limit, max(calculated) * 1.1, alpha=0.2, color='g')
+            ax.fill_between(wells, min(calculated) * 0.9, lower_limit, alpha=0.2, color='orange')
+
+            # Настройка графика
+            ax.set_xlabel('Скважины')
+            ax.set_ylabel('Давление, атм')
+            ax.set_title('Расчетные давления с геологическими границами')
+            ax.legend()
+
+            # Поворот подписей оси X для лучшей читаемости
+            plt.xticks(rotation=90)
+
+            plt.tight_layout()
+
+            # Сохранение графика, если указан путь
+            if output_path and output_path.endswith('.png'):
+                geo_path = output_path.replace('.png', '_geology.png')
+                plt.savefig(geo_path, dpi=300, bbox_inches='tight')
+                logger.info(f"График давлений с геологическими границами сохранен в {geo_path}")
+            elif output_path:
+                plt.savefig(output_path, dpi=300, bbox_inches='tight')
+                logger.info(f"График давлений с геологическими границами сохранен в {output_path}")
+
+            return fig
+
+        except Exception as e:
+            logger.error(f"Ошибка при построении графика давлений с геологическими границами: {str(e)}")
+            return None
+
     def get_results(self):
         """
         Получение результатов расчета.
