@@ -1,102 +1,102 @@
 [
     {
         "Well": "Well_1",
-        "Initial_Flow_Rate": 28.023538981449256,
-        "Current_Flow_Rate": 74.54352637334452,
-        "Water_Cut": 19.16203482413347,
-        "Reservoir_Pressure": 234.52796911901467,
-        "Bottomhole_Pressure": 150.39535356372434,
-        "Skin_Factor": 1.2112701563427173,
-        "Filter_Efficiency": 0.957215722692386
+        "Initial_Flow_Rate": 36.51816896831989,
+        "Current_Flow_Rate": 75.35744333971034,
+        "Water_Cut": 17.923765983140125,
+        "Reservoir_Pressure": 217.71301717944482,
+        "Bottomhole_Pressure": 179.37870809721397,
+        "Skin_Factor": 0.5360025782850539,
+        "Filter_Efficiency": 0.9847598057930688
     },
     {
         "Well": "Well_2",
-        "Initial_Flow_Rate": 75.83669902369866,
-        "Current_Flow_Rate": 22.420810717619602,
-        "Water_Cut": 13.999061015108584,
-        "Reservoir_Pressure": 219.05503407856992,
-        "Bottomhole_Pressure": 185.34857500523106,
-        "Skin_Factor": -1.4349452403694287,
-        "Filter_Efficiency": 0.8652915167274702
+        "Initial_Flow_Rate": 94.56310776912031,
+        "Current_Flow_Rate": 27.06652090686436,
+        "Water_Cut": 23.33665936631293,
+        "Reservoir_Pressure": 228.80147755090127,
+        "Bottomhole_Pressure": 198.0079203704749,
+        "Skin_Factor": -0.724690495271175,
+        "Filter_Efficiency": 0.6279250341334855
     },
     {
         "Well": "Well_3",
-        "Initial_Flow_Rate": 85.43256920471477,
-        "Current_Flow_Rate": 50.90945143085908,
-        "Water_Cut": 11.276663102930948,
-        "Reservoir_Pressure": 206.82053986027748,
-        "Bottomhole_Pressure": 163.3230834618837,
-        "Skin_Factor": -2.762989812177551,
-        "Filter_Efficiency": 0.8754291024880565
+        "Initial_Flow_Rate": 72.87789671042975,
+        "Current_Flow_Rate": 17.80486869037646,
+        "Water_Cut": 11.732132944088454,
+        "Reservoir_Pressure": 217.95883603697396,
+        "Bottomhole_Pressure": 197.38257679654882,
+        "Skin_Factor": -2.82288302857172,
+        "Filter_Efficiency": 0.6790378651810747
     },
     {
         "Well": "Well_4",
-        "Initial_Flow_Rate": 51.26816343751721,
-        "Current_Flow_Rate": 69.8214373326083,
-        "Water_Cut": 15.610977027641141,
-        "Reservoir_Pressure": 244.02966598344403,
-        "Bottomhole_Pressure": 198.3554479016762,
-        "Skin_Factor": -2.150194645148489,
-        "Filter_Efficiency": 0.7383696058651562
+        "Initial_Flow_Rate": 47.20409327244348,
+        "Current_Flow_Rate": 33.11374513252724,
+        "Water_Cut": 36.896934655950375,
+        "Reservoir_Pressure": 239.77188288134937,
+        "Bottomhole_Pressure": 180.62410648066,
+        "Skin_Factor": -2.1091112513267847,
+        "Filter_Efficiency": 0.6084766674320096
     },
     {
         "Well": "Well_5",
-        "Initial_Flow_Rate": 73.20419794842708,
-        "Current_Flow_Rate": 77.6999618625315,
-        "Water_Cut": 15.211281165433096,
-        "Reservoir_Pressure": 220.28758441625124,
-        "Bottomhole_Pressure": 166.6868792063472,
-        "Skin_Factor": 0.9906900762688284,
-        "Filter_Efficiency": 0.83983615676585
+        "Initial_Flow_Rate": 67.70189906877789,
+        "Current_Flow_Rate": 68.15040714569363,
+        "Water_Cut": 35.031745976670265,
+        "Reservoir_Pressure": 241.44476738617288,
+        "Bottomhole_Pressure": 182.66533563355745,
+        "Skin_Factor": 1.489542650199386,
+        "Filter_Efficiency": 0.6124617611546151
     },
     {
         "Well": "Well_6",
-        "Initial_Flow_Rate": 23.02422300550517,
-        "Current_Flow_Rate": 55.13606862702827,
-        "Water_Cut": 45.93430649772928,
-        "Reservoir_Pressure": 226.20267519931298,
-        "Bottomhole_Pressure": 172.62498980303837,
-        "Skin_Factor": -1.84989393862138,
-        "Filter_Efficiency": 0.8737244368596948
+        "Initial_Flow_Rate": 43.14152878091025,
+        "Current_Flow_Rate": 35.46335867184844,
+        "Water_Cut": 29.26970157773126,
+        "Reservoir_Pressure": 206.27353584231432,
+        "Bottomhole_Pressure": 187.47133724865068,
+        "Skin_Factor": 1.090568508008861,
+        "Filter_Efficiency": 0.7626188292416268
     },
     {
         "Well": "Well_7",
-        "Initial_Flow_Rate": 78.08917409744899,
-        "Current_Flow_Rate": 58.663649013949176,
-        "Water_Cut": 35.805576563773954,
-        "Reservoir_Pressure": 204.68393181554345,
-        "Bottomhole_Pressure": 155.12472156845934,
-        "Skin_Factor": -1.8367336946188675,
-        "Filter_Efficiency": 0.9816152385556997
+        "Initial_Flow_Rate": 56.48333227951737,
+        "Current_Flow_Rate": 76.97030709117016,
+        "Water_Cut": 33.952678206320876,
+        "Reservoir_Pressure": 244.0893949769552,
+        "Bottomhole_Pressure": 166.7988931005243,
+        "Skin_Factor": 0.5394864716979422,
+        "Filter_Efficiency": 0.8115314481675924
     },
     {
         "Well": "Well_8",
-        "Initial_Flow_Rate": 98.57858348011598,
-        "Current_Flow_Rate": 52.908822293359385,
-        "Water_Cut": 27.4130692249635,
-        "Reservoir_Pressure": 248.04154022506543,
-        "Bottomhole_Pressure": 170.6896886115451,
-        "Skin_Factor": 0.465529533078616,
-        "Filter_Efficiency": 0.6748952173082338
+        "Initial_Flow_Rate": 70.7049722978332,
+        "Current_Flow_Rate": 73.29561825987871,
+        "Water_Cut": 49.943483629566394,
+        "Reservoir_Pressure": 225.4483625883159,
+        "Bottomhole_Pressure": 186.30480764669682,
+        "Skin_Factor": -2.635184663446062,
+        "Filter_Efficiency": 0.7590150030228902
     },
     {
         "Well": "Well_9",
-        "Initial_Flow_Rate": 23.47496846572738,
-        "Current_Flow_Rate": 20.84971002780165,
-        "Water_Cut": 43.74513733377608,
-        "Reservoir_Pressure": 215.06779229333924,
-        "Bottomhole_Pressure": 155.79456312647636,
-        "Skin_Factor": -1.8388149043761093,
-        "Filter_Efficiency": 0.8324504839315019
+        "Initial_Flow_Rate": 45.30826627939273,
+        "Current_Flow_Rate": 40.04053487747244,
+        "Water_Cut": 21.460005879912593,
+        "Reservoir_Pressure": 222.41589870257667,
+        "Bottomhole_Pressure": 158.1601691252157,
+        "Skin_Factor": -1.4574404853379226,
+        "Filter_Efficiency": 0.7226315787610792
     },
     {
         "Well": "Well_10",
-        "Initial_Flow_Rate": 61.301521498171155,
-        "Current_Flow_Rate": 65.23608753097416,
-        "Water_Cut": 23.54723647112515,
-        "Reservoir_Pressure": 206.25799628651052,
-        "Bottomhole_Pressure": 182.37099816090742,
-        "Skin_Factor": -2.339148233291307,
-        "Filter_Efficiency": 0.6259905419162588
+        "Initial_Flow_Rate": 41.1570815530412,
+        "Current_Flow_Rate": 51.454830934334055,
+        "Water_Cut": 16.444851056693945,
+        "Reservoir_Pressure": 212.36758786801656,
+        "Bottomhole_Pressure": 175.3157433435739,
+        "Skin_Factor": -2.4904945654687594,
+        "Filter_Efficiency": 0.6269698882976396
     }
 ]

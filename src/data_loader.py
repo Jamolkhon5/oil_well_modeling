@@ -103,6 +103,20 @@ class DataLoader:
             logger.info(f"Файл {os.path.basename(PPL_FILE)} успешно загружен")
             logger.info(f"Размер данных: {self.ppl_data.shape}")
 
+            # ДОБАВЛЯЕМ ИСПОЛЬЗОВАНИЕ get_column_statistics
+            # Выводим статистику по давлению, если есть такой столбец
+            pressure_columns = [col for col in self.ppl_data.columns
+                                if 'давлен' in col.lower() or 'pressure' in col.lower()]
+
+            if pressure_columns:
+                for col in pressure_columns[:2]:  # Статистика для первых двух колонок
+                    stats = self.get_column_statistics('ppl', col)
+                    if stats:
+                        logger.info(f"Статистика столбца '{col}':")
+                        logger.info(f"  - Среднее: {stats.get('mean', 'N/A')}")
+                        logger.info(f"  - Минимум: {stats.get('min', 'N/A')}")
+                        logger.info(f"  - Максимум: {stats.get('max', 'N/A')}")
+
             # Проверка на наличие нескольких листов в файле
             xls = pd.ExcelFile(PPL_FILE)
             if len(xls.sheet_names) > 1:

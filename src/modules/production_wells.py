@@ -74,6 +74,15 @@ class ProductionWellsModel:
                 'fracture_length'
             ]
 
+            if hasattr(self, 'data_loader'):
+                for i in range(1, 6):  # Проверяем данные для первых 5 скважин
+                    well_id = f"Well_{i}"
+                    well_data = self.data_loader.find_well_data(well_id)
+                    if well_data:
+                        logger.info(f"Дополнительные данные скважины {well_id}:")
+                        for source, data in well_data.items():
+                            logger.info(f"  - {source}: {data.shape if hasattr(data, 'shape') else 'N/A'}")
+
             missing_models = [model for model in required_models if model not in self.models]
             if missing_models:
                 logger.warning(f"Отсутствуют некоторые модели: {missing_models}")

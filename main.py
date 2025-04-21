@@ -3,7 +3,7 @@
 Главный файл для запуска расчетной схемы Пушкиной Т.В.
 
 Этот скрипт загружает данные и выполняет расчеты всех
-восьми модулей схемы.
+модулей схемы, включая определение статусов скважин и состояния процессов.
 """
 
 import os
@@ -33,6 +33,10 @@ from src.modules.filter_reduction import FilterReductionModel
 from src.modules.fracture_length import FractureLengthModel
 from src.modules.production_wells import ProductionWellsModel
 
+# ДОБАВЛЯЕМ ИМПОРТ МОДУЛЕЙ ОПРЕДЕЛЕНИЯ СТАТУСОВ СКВАЖИН И СОСТОЯНИЯ ПРОЦЕССОВ
+from src.modules.well_status import WellStatusModel
+from src.modules.well_process_state import WellProcessStateModel
+
 # Настройка логирования
 logging.basicConfig(
     level=logging.INFO,
@@ -61,6 +65,30 @@ def main():
         # Загружаем все данные
         data_loader.load_all_data()
 
+        # ДОБАВЛЯЕМ ИСПОЛЬЗОВАНИЕ get_column_statistics
+        logger.info("\n=== Анализ статистики загруженных данных ===")
+
+        # Анализируем статистику по ключевым столбцам
+        datasets_to_analyze = {
+            'pzab': ['Давление', 'Pressure'],
+            'ppl': ['Давление', 'Pressure'],
+            'arcgis': ['Скважина', 'Well', 'Статус', 'Status']
+        }
+
+        for dataset_name, columns in datasets_to_analyze.items():
+            logger.info(f"\nСтатистика для {dataset_name}:")
+            for column in columns:
+                stats = data_loader.get_column_statistics(dataset_name, column)
+                if stats:
+                    logger.info(f"Столбец '{column}':")
+                    if 'mean' in stats:  # Числовой столбец
+                        logger.info(f"  - Среднее: {stats.get('mean', 'N/A'):.2f}")
+                        logger.info(f"  - Минимум: {stats.get('min', 'N/A'):.2f}")
+                        logger.info(f"  - Максимум: {stats.get('max', 'N/A'):.2f}")
+                    else:  # Нечисловой столбец
+                        logger.info(f"  - Уникальных значений: {stats.get('unique_values', 'N/A')}")
+                        logger.info(f"  - Наиболее частое: {stats.get('top_value', 'N/A')}")
+
         # Выводим примеры загруженных данных
         logger.info("Примеры загруженных данных:")
         for dataset_name in ['pzab', 'ppl', 'arcgis', 'gdi_vnr', 'gdi_reint', 'gtp', 'nnt_ngt']:
@@ -76,6 +104,112 @@ def main():
 
         # Словарь для хранения всех моделей
         models = {}
+
+        # ДОБАВЛЯЕМ ЭТАП ОПРЕДЕЛЕНИЯ СТАТУСОВ СКВАЖИН
+        logger.info("\n=== Этап 0.1: Определение статусов скважин ===")
+
+        # Создаем модель определения статусов скважин
+        well_status_model = WellStatusModel()
+
+        # Инициализируем модель данными
+        well_status_data = {
+            'arcgis_data': data_loader.arcgis_data,
+            'pzab_data': data_loader.pzab_data,
+            'ppl_data': data_loader.ppl_data
+        }
+
+        if well_status_model.initialize_from_data(well_status_data):
+            # Определяем статусы скважин
+            if well_status_model.determine_well_statuses():
+                # Строим и сохраняем графики распределения статусов
+                well_status_model.plot_status_distribution(
+                    os.path.join(OUTPUT_DIR, "well_status_distribution.png")
+                )
+
+                well_status_model.plot_status_category_distribution(
+                    os.path.join(OUTPUT_DIR, "well_status_category_distribution.png")
+                )
+
+                # Выводим отчет
+                logger.info("Результаты определения статусов скважин:")
+                logger.info(well_status_model.report())
+
+                # Добавляем модель в словарь
+                models['well_status'] = well_status_model
+
+                # Передаем результаты статусов скважин в data_loader для использования в последующих модулях
+                if hasattr(data_loader, 'arcgis_data') and data_loader.arcgis_data is not None:
+                    well_status_results = well_status_model.get_results()
+
+                    # Объединяем данные о статусах с существующими данными arcgis
+                    if isinstance(data_loader.arcgis_data, pd.DataFrame):
+                        # Если данные arcgis - датафрейм, добавляем информацию о статусах
+                        data_loader.arcgis_data = pd.merge(
+                            data_loader.arcgis_data,
+                            well_status_results[['Well', 'Status_Code', 'Status_Description', 'Status_Category']],
+                            left_on='Well',  # Нужно будет найти правильное имя колонки
+                            right_on='Well',
+                            how='left'
+                        )
+
+                    logger.info("Статусы скважин интегрированы в общие данные")
+            else:
+                logger.error("Не удалось определить статусы скважин")
+        else:
+            logger.error("Не удалось инициализировать модель определения статусов скважин данными")
+
+        # ДОБАВЛЯЕМ ЭТАП ОПРЕДЕЛЕНИЯ СОСТОЯНИЯ ПРОЦЕССОВ СКВАЖИН
+        logger.info("\n=== Этап 0.2: Определение состояния процессов скважин ===")
+
+        # Создаем модель определения состояния процессов скважин
+        well_process_state_model = WellProcessStateModel()
+
+        # Инициализируем модель данными
+        well_process_state_data = {
+            'arcgis_data': data_loader.arcgis_data,  # Теперь уже обогащенная данными о статусах
+            'pzab_data': data_loader.pzab_data,
+            'gtp_data': data_loader.gtp_data
+        }
+
+        if well_process_state_model.initialize_from_data(well_process_state_data):
+            # Определяем состояние процессов скважин
+            if well_process_state_model.determine_process_states():
+                # Строим и сохраняем графики распределения состояний процессов
+                well_process_state_model.plot_process_state_distribution(
+                    os.path.join(OUTPUT_DIR, "well_process_state_distribution.png")
+                )
+
+                well_process_state_model.plot_days_in_state(
+                    os.path.join(OUTPUT_DIR, "well_process_state_days.png")
+                )
+
+                # Выводим отчет
+                logger.info("Результаты определения состояния процессов скважин:")
+                logger.info(well_process_state_model.report())
+
+                # Добавляем модель в словарь
+                models['well_process_state'] = well_process_state_model
+
+                # Передаем результаты состояния процессов в data_loader для использования в последующих модулях
+                if hasattr(data_loader, 'arcgis_data') and data_loader.arcgis_data is not None:
+                    well_process_state_results = well_process_state_model.get_results()
+
+                    # Объединяем данные о состоянии процессов с существующими данными arcgis
+                    if isinstance(data_loader.arcgis_data, pd.DataFrame):
+                        # Если данные arcgis - датафрейм, добавляем информацию о состоянии процессов
+                        data_loader.arcgis_data = pd.merge(
+                            data_loader.arcgis_data,
+                            well_process_state_results[['Well', 'Process_State_Code', 'Process_State_Description',
+                                                        'Process_Details', 'Days_In_Current_State']],
+                            on='Well',
+                            how='left'
+                        )
+
+                    logger.info("Состояния процессов скважин интегрированы в общие данные")
+            else:
+                logger.error("Не удалось определить состояния процессов скважин")
+        else:
+            logger.error("Не удалось инициализировать модель определения состояния процессов скважин данными")
 
         # Этап 1: Подбор относительных фазовых проницаемостей
         logger.info("\n=== Этап 1: Подбор относительных фазовых проницаемостей ===")
@@ -119,6 +253,36 @@ def main():
         if regression_model.initialize_from_data(regression_data):
             # Подбираем параметры модели
             if regression_model.fit_model():
+
+                # Адаптируем модель на историю добычи
+                logger.info("\n=== Адаптация модели на историю добычи ===")
+
+                # Получаем данные для адаптации
+                production_data = {
+                    'production_wells': data_loader.get_data_for_production_wells()
+                }
+
+                # Параметры пласта (из данных или значения по умолчанию)
+                reservoir_params = {
+                    'permeability': 50.0,  # мД
+                    'porosity': 0.2,  # д.ед.
+                    'total_compressibility': 1e-5,  # 1/атм
+                    'mu_w': 0.45,  # сПз
+                    'mu_o': 1.3,  # сПз
+                    'mu_g': 0.02  # сПз
+                }
+
+                # Выполняем адаптацию на историю добычи
+                if regression_model.adapt_to_production_history(production_data, reservoir_params):
+                    logger.info("Адаптация на историю добычи выполнена успешно")
+
+                    # Строим графики относительных проницаемостей после адаптации
+                    regression_model.plot_relative_permeability_curves(
+                        os.path.join(OUTPUT_DIR, "relative_permeability_curves_adapted.png")
+                    )
+                else:
+                    logger.warning("Не удалось адаптировать модель на историю добычи")
+
                 # Выводим отчет
                 logger.info("Результаты итеративного подбора регрессионной моделью:")
                 logger.info(regression_model.report())
