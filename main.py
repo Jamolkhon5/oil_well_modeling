@@ -314,6 +314,29 @@ def main():
                         os.path.join(OUTPUT_DIR, "pressure_changes.png")
                     )
 
+                    # Построение дополнительных графиков с использованием уравнения пьезопроводности
+                    if hasattr(pressure_calc_model, 'results') and pressure_calc_model.results is not None and len(
+                            pressure_calc_model.results) > 0:
+                        try:
+                            well_id = pressure_calc_model.results['Well'].iloc[0]
+                            # Построение карты пластового давления
+                            pressure_calc_model.plot_pressure_field(
+                                well_id, 30.0,  # время 30 дней
+                                os.path.join(OUTPUT_DIR, f"pressure_field_{well_id}.png")
+                            )
+                            logger.info(f"Построена карта пластового давления для скважины {well_id}")
+
+                            # Создаем график изменения давления во времени
+                            time_range = np.linspace(1, 365, 100)  # От 1 до 365 дней
+                            distances = [10, 50, 100, 200]  # Расстояния от скважины в метрах
+                            pressure_calc_model.plot_pressure_vs_time(
+                                well_id, distances, time_range,
+                                os.path.join(OUTPUT_DIR, f"pressure_vs_time_{well_id}.png")
+                            )
+                            logger.info(f"Построен график изменения давления во времени для скважины {well_id}")
+                        except Exception as e:
+                            logger.error(f"Ошибка при построении дополнительных графиков: {str(e)}")
+
                     # Выводим отчет
                     logger.info("Результаты расчета пластовых давлений:")
                     logger.info(pressure_calc_model.report())

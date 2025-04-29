@@ -1,82 +1,92 @@
 [
     {
         "Well": "Well_1",
-        "Initial_Pressure": 225.4979637236889,
-        "Calculated_Pressure": 192.95994023172992,
-        "Difference": 32.538023491958995,
-        "Adjusted_Pressure": 210.4979637236889,
-        "Boundary_Applied": true
+        "Initial_Pressure": 246.76497014476598,
+        "Calculated_Pressure": 181.51504533112546,
+        "Difference": 65.24992481364052,
+        "Adjusted_Pressure": 231.76497014476598,
+        "Boundary_Applied": true,
+        "Diffusivity_Pressure": 248.3497004189754
     },
     {
         "Well": "Well_2",
-        "Initial_Pressure": 232.28776783665668,
-        "Calculated_Pressure": 229.64636870170244,
-        "Difference": 2.6413991349542414,
-        "Adjusted_Pressure": 229.64636870170244,
-        "Boundary_Applied": false
+        "Initial_Pressure": 217.0336452784793,
+        "Calculated_Pressure": 199.19206856011365,
+        "Difference": 17.841576718365644,
+        "Adjusted_Pressure": 202.0336452784793,
+        "Boundary_Applied": true,
+        "Diffusivity_Pressure": 248.3497004189754
     },
     {
         "Well": "Well_3",
-        "Initial_Pressure": 200.80821975684955,
-        "Calculated_Pressure": 208.2751646997562,
-        "Difference": -7.46694494290665,
-        "Adjusted_Pressure": 208.2751646997562,
-        "Boundary_Applied": false
+        "Initial_Pressure": 219.5933175347968,
+        "Calculated_Pressure": 191.11660217122144,
+        "Difference": 28.47671536357535,
+        "Adjusted_Pressure": 204.5933175347968,
+        "Boundary_Applied": true,
+        "Diffusivity_Pressure": 248.3497004189754
     },
     {
         "Well": "Well_4",
-        "Initial_Pressure": 228.94549123379693,
-        "Calculated_Pressure": 180.12398571664224,
-        "Difference": 48.82150551715469,
-        "Adjusted_Pressure": 213.94549123379693,
-        "Boundary_Applied": true
+        "Initial_Pressure": 206.4928996373361,
+        "Calculated_Pressure": 201.17084772230524,
+        "Difference": 5.322051915030869,
+        "Adjusted_Pressure": 201.17084772230524,
+        "Boundary_Applied": false,
+        "Diffusivity_Pressure": 248.3497004189754
     },
     {
         "Well": "Well_5",
-        "Initial_Pressure": 244.81659148255804,
-        "Calculated_Pressure": 201.83503660334875,
-        "Difference": 42.981554879209284,
-        "Adjusted_Pressure": 229.81659148255804,
-        "Boundary_Applied": true
+        "Initial_Pressure": 209.04648649393792,
+        "Calculated_Pressure": 180.0241806025757,
+        "Difference": 29.02230589136221,
+        "Adjusted_Pressure": 194.04648649393792,
+        "Boundary_Applied": true,
+        "Diffusivity_Pressure": 248.3497004189754
     },
     {
         "Well": "Well_6",
-        "Initial_Pressure": 233.26177578888442,
-        "Calculated_Pressure": 205.24836500822354,
-        "Difference": 28.013410780660877,
-        "Adjusted_Pressure": 218.26177578888442,
-        "Boundary_Applied": true
+        "Initial_Pressure": 237.13326126838177,
+        "Calculated_Pressure": 217.86790328487479,
+        "Difference": 19.265357983506988,
+        "Adjusted_Pressure": 222.13326126838177,
+        "Boundary_Applied": true,
+        "Diffusivity_Pressure": 248.3497004189754
     },
     {
         "Well": "Well_7",
-        "Initial_Pressure": 225.89119062663053,
-        "Calculated_Pressure": 201.52338505926815,
-        "Difference": 24.36780556736238,
-        "Adjusted_Pressure": 210.89119062663053,
-        "Boundary_Applied": true
+        "Initial_Pressure": 231.8836493314376,
+        "Calculated_Pressure": 192.82945879907098,
+        "Difference": 39.05419053236662,
+        "Adjusted_Pressure": 216.8836493314376,
+        "Boundary_Applied": true,
+        "Diffusivity_Pressure": 248.3497004189754
     },
     {
         "Well": "Well_8",
-        "Initial_Pressure": 215.61707850079972,
-        "Calculated_Pressure": 206.5430683464788,
-        "Difference": 9.074010154320916,
-        "Adjusted_Pressure": 206.5430683464788,
-        "Boundary_Applied": false
+        "Initial_Pressure": 219.54652805208482,
+        "Calculated_Pressure": 187.64735929439348,
+        "Difference": 31.899168757691342,
+        "Adjusted_Pressure": 204.54652805208482,
+        "Boundary_Applied": true,
+        "Diffusivity_Pressure": 248.3497004189754
     },
     {
         "Well": "Well_9",
-        "Initial_Pressure": 219.80372797000157,
-        "Calculated_Pressure": 189.85476610637858,
-        "Difference": 29.948961863622998,
-        "Adjusted_Pressure": 204.80372797000157,
-        "Boundary_Applied": true
+        "Initial_Pressure": 208.30293237741924,
+        "Calculated_Pressure": 211.42932463285337,
+        "Difference": -3.1263922554341264,
+        "Adjusted_Pressure": 211.42932463285337,
+        "Boundary_Applied": false,
+        "Diffusivity_Pressure": 248.3497004189754
     },
     {
         "Well": "Well_10",
-        "Initial_Pressure": 208.37333865082385,
-        "Calculated_Pressure": 228.69626610486,
-        "Difference": -20.322927454036147,
-        "Adjusted_Pressure": 228.69626610486,
-        "Boundary_Applied": false
+        "Initial_Pressure": 239.33858513143133,
+        "Calculated_Pressure": 223.35060701296698,
+        "Difference": 15.987978118464355,
+        "Adjusted_Pressure": 224.33858513143133,
+        "Boundary_Applied": true,
+        "Diffusivity_Pressure": 248.3497004189754
     }
 ]

@@ -1,92 +1,92 @@
 [
     {
         "Well": "Well_1",
-        "Permeability": 92.68384352229054,
-        "Porosity": 0.19481097668243708,
-        "Viscosity": 6.145379635466496,
-        "Skin_Factor": -1.8010091975393685,
+        "Permeability": 35.47977156947471,
+        "Porosity": 0.214186018906245,
+        "Viscosity": 3.198007313398188,
+        "Skin_Factor": 4.908256941102312,
+        "Well_Radius": 0.1,
+        "Recovery_Time": 9.963147983989588e-05
+    },
+    {
+        "Well": "Well_2",
+        "Permeability": 38.503548090534366,
+        "Porosity": 0.11035353851440871,
+        "Viscosity": 8.41146270338799,
+        "Skin_Factor": 3.0128617140985607,
+        "Well_Radius": 0.1,
+        "Recovery_Time": 9.175455446519026e-05
+    },
+    {
+        "Well": "Well_3",
+        "Permeability": 87.001269857619,
+        "Porosity": 0.20788442161562348,
+        "Viscosity": 7.571354924040918,
+        "Skin_Factor": 4.125931442533903,
+        "Well_Radius": 0.1,
+        "Recovery_Time": 8.983454907884047e-05
+    },
+    {
+        "Well": "Well_4",
+        "Permeability": 83.66670091480998,
+        "Porosity": 0.1967328393093729,
+        "Viscosity": 4.998921603630805,
+        "Skin_Factor": 3.694607817391221,
+        "Well_Radius": 0.1,
+        "Recovery_Time": 6.929819861501816e-05
+    },
+    {
+        "Well": "Well_5",
+        "Permeability": 57.559228074939355,
+        "Porosity": 0.236031542827423,
+        "Viscosity": 2.994633142914468,
+        "Skin_Factor": -1.8180948498566312,
         "Well_Radius": 0.1,
         "Recovery_Time": NaN
     },
     {
-        "Well": "Well_2",
-        "Permeability": 67.45481874501533,
-        "Porosity": 0.1924854703141397,
-        "Viscosity": 3.232126927825906,
-        "Skin_Factor": 2.1756792394314832,
-        "Well_Radius": 0.1,
-        "Recovery_Time": 5.048670425581064e-05
-    },
-    {
-        "Well": "Well_3",
-        "Permeability": 43.84706822459888,
-        "Porosity": 0.11561505046831502,
-        "Viscosity": 1.1462797081590916,
-        "Skin_Factor": 0.6219400649103051,
-        "Well_Radius": 0.1,
-        "Recovery_Time": 2.065483003422332e-05
-    },
-    {
-        "Well": "Well_4",
-        "Permeability": 87.4477261077901,
-        "Porosity": 0.1044984698666086,
-        "Viscosity": 1.564508280285919,
-        "Skin_Factor": 4.784709189251886,
-        "Well_Radius": 0.1,
-        "Recovery_Time": 3.067837978526885e-05
-    },
-    {
-        "Well": "Well_5",
-        "Permeability": 64.19188132005813,
-        "Porosity": 0.18308504543699053,
-        "Viscosity": 9.536664731738101,
-        "Skin_Factor": 4.774374597333175,
-        "Well_Radius": 0.1,
-        "Recovery_Time": 0.00011691201200403014
-    },
-    {
         "Well": "Well_6",
-        "Permeability": 49.5486607391551,
-        "Porosity": 0.2055098673937561,
-        "Viscosity": 1.9361446505037208,
-        "Skin_Factor": -0.9042446651099578,
+        "Permeability": 13.592588802894552,
+        "Porosity": 0.19745941406621775,
+        "Viscosity": 8.304780561235734,
+        "Skin_Factor": 1.6284648064171883,
         "Well_Radius": 0.1,
-        "Recovery_Time": 8.180366948531664e-06
+        "Recovery_Time": 0.00016612118194316895
     },
     {
         "Well": "Well_7",
-        "Permeability": 27.14697098739906,
-        "Porosity": 0.20975727943137173,
-        "Viscosity": 6.638186485970289,
-        "Skin_Factor": 2.380754871805637,
+        "Permeability": 25.74703298991895,
+        "Porosity": 0.22752322225258848,
+        "Viscosity": 7.149764342256065,
+        "Skin_Factor": 3.2964646094625563,
         "Well_Radius": 0.1,
-        "Recovery_Time": 0.00012284328259107438
+        "Recovery_Time": 0.00015369961133621755
     },
     {
         "Well": "Well_8",
-        "Permeability": 28.738728657984424,
-        "Porosity": 0.18753964546940238,
-        "Viscosity": 3.1412254572448948,
-        "Skin_Factor": 2.721043484195201,
+        "Permeability": 55.188639722679525,
+        "Porosity": 0.1520796330127055,
+        "Viscosity": 4.467167236381879,
+        "Skin_Factor": 1.7370007303867872,
         "Well_Radius": 0.1,
-        "Recovery_Time": 8.147356354181338e-05
+        "Recovery_Time": 5.414847891144132e-05
     },
     {
         "Well": "Well_9",
-        "Permeability": 44.104761058994896,
-        "Porosity": 0.25511346706302945,
-        "Viscosity": 3.2468042222154914,
-        "Skin_Factor": 3.5743138423466725,
+        "Permeability": 67.99750151566482,
+        "Porosity": 0.1655000430417875,
+        "Viscosity": 3.9700555444655246,
+        "Skin_Factor": -0.15186320399912212,
         "Well_Radius": 0.1,
-        "Recovery_Time": 8.646433422425591e-05
+        "Recovery_Time": 2.6705815107882896e-05
     },
     {
         "Well": "Well_10",
-        "Permeability": 91.9783553510107,
-        "Porosity": 0.2398954381228286,
-        "Viscosity": 7.662299750487833,
-        "Skin_Factor": 3.0767523216215427,
+        "Permeability": 18.380673982258717,
+        "Porosity": 0.13816690831243617,
+        "Viscosity": 8.635658677597409,
+        "Skin_Factor": -0.8756704885222466,
         "Well_Radius": 0.1,
-        "Recovery_Time": 8.420287559400869e-05
+        "Recovery_Time": 2.6501970591818874e-05
     }
 ]
